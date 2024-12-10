@@ -45,3 +45,79 @@
     border-color: black;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+@media screen and (max-width:660px){
+    .add-task-form input,
+    .add-task-form select,
+    .add-task-form button {
+        width: 50%;
+    }
+
+    .add-task-form {
+        margin: 0 10px 20px;
+    }
+}
+
+@media screen and (max-width:425px){
+    .add-task-form input {
+        height: 30px;
+        font-size: 12px;
+    }
+    .add-task-form select{
+        height: 36px;
+        font-size: 12px;
+    }
+    .add-task-form button{
+        font-size: 12px;
+        height: 30px;
+    }
+    .add-task-form {
+        margin: 0 10px 20px;
+    }
+
+}
+
+@media screen and (max-width:375px){
+    .add-task-form input {
+        width: 21%;
+        height: 30px;
+        font-size: 12px;
+    }
+    .add-task-form select{
+        width: 72px;
+        height: 36px;
+        font-size: 12px;
+        padding-left: 4px;
+    }
+    .add-task-form button{
+        font-size: 12px;
+        width: 70px;
+        height: 30px;
+    }
+    .add-task-form {
+        gap: 5px;
+        margin: 0 10px 20px;
+    }
+}
+
+@media screen and (max-width:355px){
+    .add-task-form input {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:345px){
+    .add-task-form input {
+        width: 19%;
+    }
+    .add-task-form select{
+        width: 68px;
+        padding-left: 2px;
+    }
+}
+
+@media screen and (max-width:327px){
+    .add-task-form input {
+        width: 18%;
+    }
+}
