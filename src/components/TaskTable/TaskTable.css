@@ -1,3 +1,29 @@
 .task-table {
     margin: 20px;
+    border: 2px solid #a1a1a1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.task-table .tabulator-row {
+    font-size: 14px;
+    color: #333;
+}
+
+.task-table .tabulator-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.task-table .tabulator-cell {
+    border-right: 1px solid #ddd;
+}
+
+.task-table .tabulator-cell:last-child {
+    border-right: none;
+}
+
+.task-table .tabulator-header {
+    color: rgb(50, 50, 50);
+    text-align: center;
+    font-weight: bold;
 }
