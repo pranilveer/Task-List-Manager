@@ -18,3 +18,24 @@ h1 {
     text-align: center;
     color: #333;
 }
+
+.filter-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-container label{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-container select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 2rem;
+}
