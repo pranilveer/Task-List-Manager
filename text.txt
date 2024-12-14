@@ -1,0 +1,31 @@
+1. How did you handle inline editing in the table?
+Inline editing in the table was handled using the editor property of the Tabulator columns. For editable fields such as "Title" and "Description," the input editor was specified, allowing users to directly type into the cells. For the "Status" field, the select editor was used, providing a dropdown menu with predefined options (e.g., "To Do," "In Progress," and "Done"). The cellEdited event listener was implemented to capture changes made in the table and trigger the updateTask function, which updates the task data accordingly.
+
+
+2. Explain how you fetched and processed the data from the dummy API.
+The data was fetched using the axios.get method to retrieve tasks from the dummy API endpoint https://jsonplaceholder.typicode.com/todos. The data was limited to the first 20 items using the slice(0, 20) method. Each task object was mapped to include an "id," "title," and a default "description." The "status" field was derived based on the "completed" property of the fetched task, assigning "Done" for completed tasks and "To Do" for incomplete tasks. This processed data was then used as the input for the task table.
+
+
+3. What approach did you use to filter tasks based on status?
+Tasks were filtered using a combination of state and Tabulator’s setFilter method. A dropdown menu allowed users to select a specific status (e.g., "All," "To Do," "In Progress," "Done"). When the selected status changed, the setFilter method was called on the Tabulator instance, applying a filter on the "status" field. If "All" was selected, any active filters were cleared using the clearFilter method to display all tasks.
+
+
+4. How did you manage the state of tasks when adding or editing them?
+Task state management was achieved using React’s useState hook. For editing tasks, the cellEdited event listener captured changes and updated the task list by modifying the corresponding task’s data. For adding tasks, a new task object was created and appended to the existing task list using the setTasks function. These updates ensured the UI remained synchronized with the underlying data.
+
+
+5. What challenges did you face during development, and how did you overcome them?
+Challenge: Handling Tabulator’s initialization lifecycle:
+Initially, errors occurred when trying to call setFilter before the table was fully initialized. This was resolved by maintaining a tableInstance state variable and ensuring methods like setFilter were called only after the table was created.
+
+Challenge: Styling issues with hover effects:
+Ensuring smooth and visually appealing hover effects for the task counter required experimenting with CSS transitions. The issue was resolved by using the transform property with scale and a transition for smooth scaling.
+
+Challenge: Managing filters for both search and status:
+Combining text-based search filtering with status filtering required careful application of multiple filters in Tabulator. This was solved by structuring filters as an array of conditions and applying them dynamically.
+
+Challenge: Dynamic API data processing:
+Mapping and transforming data from the API to fit the table’s structure was initially inconsistent. This was addressed by standardizing the data transformation logic during the fetch process.
+
+Challenge: Debugging button functionality within the table:
+Custom actions like delete and edit required identifying the clicked button accurately. This was resolved by checking the class of the clicked element and triggering appropriate actions using cellClick.
