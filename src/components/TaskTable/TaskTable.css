@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Salsa&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.task-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+}
+
+.task-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-header h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.task-counters{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.task-counter{
+    background-color: #ffffff97;
+    color: #333333;
+    height: 5rem;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease-in-out;
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-counter:hover{
+    transform: scale(1.1);
+}
+
 .task-table {
     margin: 20px;
     border: 2px solid #a1a1a1;
@@ -26,4 +76,81 @@
     color: rgb(50, 50, 50);
     text-align: center;
     font-weight: bold;
+}
+
+.search-bar {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.search-div{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.search-box {
+    width: 90%;
+    padding: 8px;
+    margin: 1rem auto;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+@media screen and (max-width:768px){
+    .task-counter{
+        height: 5rem;
+        width: 9rem;
+    }
+}
+
+@media screen and (max-width:680px){
+    .task-counter{
+        width: 8rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:610px){
+    .task-counter{
+        width: 7rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:540px){
+    .task-counter{
+        width: 6rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:460px){
+    .task-counter{
+        width: 5rem;
+        height: 4rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width:400px){
+    .task-counter{
+        height: 4rem;
+        width: 4rem;
+        font-size: 0.6rem;
+    }
 }

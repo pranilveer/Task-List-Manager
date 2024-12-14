@@ -1,9 +1,10 @@
-import react, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import AddTaskForm from './components/AddTaskForm/AddTaskForm';
 import TaskTable from './components/TaskTable/TaskTable';
 import { fetchTasks } from "./api/fetchTasks";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ResizeObserver from "resize-observer-polyfill";
 import './App.css';
 
 const App = () => {
@@ -12,11 +13,15 @@ const App = () => {
 
   useEffect(() => {
     const loadTasks = async () => {
-        const data = await fetchTasks();
-        setTasks(data);
+      const data = await fetchTasks();
+      setTasks(data);
     };
     loadTasks();
-}, []);
+  }, []);
+
+  if (!window.ResizeObserver) {
+    window.ResizeObserver = ResizeObserver;
+  }
 
   const addTask = (newtask) => {
     setTasks([...tasks, { ...newtask, id: tasks.length + 1 }]);
